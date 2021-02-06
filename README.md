@@ -33,6 +33,7 @@ User Story #4: Each section element with the class of main-section should also h
 -> OK
 
 User Story #5: The .main-section elements should contain at least 10 p elements total (not each).
+-> OK
 
 User Story #6: The .main-section elements should contain at least 5 code elements total (not each).
 -> OK
