@@ -33,9 +33,16 @@
       overflow: auto;
       color: #d63384;
     }
+
     /* If the code is inside a pre tag, than it'll be full black */
     pre code {
       color: #000;
+    }
+
+    #main-doc {
+      margin-left: 32%;
+      margin-right: 2rem;
+      margin-top: 2rem;
     }
 
 
@@ -46,7 +53,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 5rem;
+      padding: 1rem 2rem;
     }
 
     .header-navbar-list {
@@ -67,6 +74,36 @@
     }
 
     /* Hero DIV */
+
+    /* ASIDE Navbar */
+    #navbar {
+      position: fixed;
+      height: 100%;
+      width: 30%;
+      margin-left: 2rem;
+      margin-top: 2rem;
+    }
+
+    .glossary-list {
+      list-style-type: none;
+    }
+
+    .glossary-list li {
+      margin-bottom: 10px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #6c757d;
+    }
+
+    .nav-link:hover {
+      color: #7952b3;
+      border-bottom: 1px solid;
+      border-color: #7952b3;
+    }
+
+
 
 
     /* How_it_works Section */
@@ -89,13 +126,60 @@
     .piece-of-code {
       padding: 0 15px;
       background-color: #eee;
+      margin: 0 2rem;
     }
 
+    /* Footer Section */
+    footer {
+      background-color: #f8f9fa;
+      color: #63707c;
+      text-align: center;
+      padding: 1rem;
+      padding-bottom: 0;
+      margin-top: 2rem;
+    }
 
+    .full-doc {
+      padding: 1rem;
+    }
 
+    @media (max-width:900px) {
+      #navbar {
+        position: relative;
+        display: block;
+        width: auto;
+        margin: 1rem 2rem;
+      }
 
+      #main-doc {
+        width: auto;
+        margin: 1rem 2rem;
+      }
 
+      @media (max-width: 400px)  {
+        .header-navbar {
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
 
+        .header-navbar-list {
+          flex-direction: column;
+
+        }
+
+        .header-navbar-list a {
+          margin-right: 0;
+        }
+
+        .piece-of-code {
+          margin: 0;
+        }
+
+      }
+
+    }
   </style>
 
 
@@ -113,6 +197,27 @@
     </nav>
 
   </header>
+
+
+  <!-- This is the sidebar in which there'll be our glossary navbar -->
+  <aside>
+    <nav id="navbar">
+      <header>
+        <h3>Navbars with Bootstrap 5.0</h3>
+      </header>
+      <ul class="glossary-list">
+        <li><a class="nav-link" href="#How_it_works">How it works</a></li>
+        <li><a class="nav-link" href="#Supported_content">Supported content</a></li>
+        <li><a class="nav-link" href="#Color_schemes">Color Schemes</a></li>
+        <li><a class="nav-link" href="#Containers">Containers</a></li>
+        <li><a class="nav-link" href="#Placement">Placement</a></li>
+        <li><a class="nav-link" href="#Responsive_behaviors">Responsive behaviors</a></li>
+      </ul>
+
+
+    </nav>
+
+  </aside>
 
 
 
@@ -136,7 +241,8 @@
 
         <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.</li>
 
-        <li>Ensure accessibility by using a <code>&#x3C;nav&#x3E;</code> element or, if using a more generic element such as a <code>&#x3C;div&#x3E;</code>, add a role="navigation" to every navbar to explicitly identify it as a landmark region for users of assistive
+        <li>Ensure accessibility by using a <code>&#x3C;nav&#x3E;</code> element or, if using a more generic element such as a <code>&#x3C;div&#x3E;</code>, add a role="navigation" to every navbar to explicitly identify it as a landmark region for
+          users of assistive
           technologies.</li>
 
         <li>Indicate the current item by using <code>aria-current="page"</code> for the current page or <code>aria-current="true"</code> for the current item in a set.</li>
@@ -168,7 +274,7 @@
       </ul>
       <p>Here’s an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the <code>lg</code> (large) breakpoint.</p>
 
-<!-- Here's the piece of code  -->
+      <!-- Here's the piece of code  -->
       <div class="piece-of-code">
         <pre>
           <code>
@@ -213,13 +319,15 @@
       </div>
 
       <p>This example uses color (bg-light) and spacing (my-2, my-lg-0, me-sm-0, my-sm-0) utility classes.</p>
-      <p>To deep dive on Supported Content, check full documentation for <a href="https://getbootstrap.com/docs/5.0/components/navbar/#brand">Brand</a>, <a href="https://getbootstrap.com/docs/5.0/components/navbar/#nav">Nav</a>, <a href="https://getbootstrap.com/docs/5.0/components/navbar/#forms">Forms</a> and <a href="https://getbootstrap.com/docs/5.0/components/navbar/#text">Text</a>.</p>
+      <p>To deep dive on Supported Content, check full documentation for <a href="https://getbootstrap.com/docs/5.0/components/navbar/#brand">Brand</a>, <a href="https://getbootstrap.com/docs/5.0/components/navbar/#nav">Nav</a>, <a
+          href="https://getbootstrap.com/docs/5.0/components/navbar/#forms">Forms</a> and <a href="https://getbootstrap.com/docs/5.0/components/navbar/#text">Text</a>.</p>
     </section>
 
     <!-- Third section -->
     <section class="main-section" id="Color_schemes">
       <h2>Color Schemes</h2>
-      <p>Theming the navbar has never been easier thanks to the combination of theming classes and <code>background-color</code> utilities. Choose from <code>.navbar-light</code> for use with light background colors, or <code>.navbar-dark</code> for dark background colors. Then, customize with <code>.bg-*</code> utilities.</p>
+      <p>Theming the navbar has never been easier thanks to the combination of theming classes and <code>background-color</code> utilities. Choose from <code>.navbar-light</code> for use with light background colors, or <code>.navbar-dark</code> for
+        dark background colors. Then, customize with <code>.bg-*</code> utilities.</p>
       <div class="piece-of-code">
         <pre>
           <code>
@@ -242,7 +350,8 @@
     <!-- Fourth section -->
     <section class="main-section" id="Containers">
       <h2>Containers</h2>
-      <p>Although it’s not required, you can wrap a navbar in a <code>.container</code> to center it on a page–though note that an inner container is still required. Or you can add a container inside the <code>.navbar</code> to only center the contents of a fixed or static top navbar.</p>
+      <p>Although it’s not required, you can wrap a navbar in a <code>.container</code> to center it on a page–though note that an inner container is still required. Or you can add a container inside the <code>.navbar</code> to only center the
+        contents of a fixed or static top navbar.</p>
 
       <div class="piece-of-code">
         <pre>
@@ -276,7 +385,8 @@
     <!-- Fifth section -->
     <section class="main-section" id="Placement">
       <h2>Placement</h2>
-      <p>Use our position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top (scrolls with the page until it reaches the top, then stays there). Fixed navbars use <code>position: fixed</code>, meaning they’re pulled from the normal flow of the DOM and may require custom CSS (e.g., <code>padding-top</code> on the <code>&#x3C;body&#x3E;</code>) to prevent overlap with other elements.</p>
+      <p>Use our position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top (scrolls with the page until it reaches the top, then stays there). Fixed navbars use
+        <code>position: fixed</code>, meaning they’re pulled from the normal flow of the DOM and may require custom CSS (e.g., <code>padding-top</code> on the <code>&#x3C;body&#x3E;</code>) to prevent overlap with other elements.</p>
 
       <p>Also note that <strong><code>.sticky-top</code> uses <code>position: sticky</code>, which isn’t fully supported in every browser.</strong></p>
 
@@ -337,16 +447,20 @@
     <!-- Sixth section -->
     <section class="main-section" id="Responsive_behaviors">
       <h2>Responsive behaviors</h2>
-      <p>Navbars can use <code>.navbar-toggler</code>, <code>.navbar-collapse</code>, and <code>.navbar-expand{-sm|-md|-lg|-xl|-xxl}</code> classes to determine when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.</p>
+      <p>Navbars can use <code>.navbar-toggler</code>, <code>.navbar-collapse</code>, and <code>.navbar-expand{-sm|-md|-lg|-xl|-xxl}</code> classes to determine when their content collapses behind a button. In combination with other utilities, you
+        can easily choose when to show or hide particular elements.</p>
 
       <p>For navbars that never collapse, add the <code>.navbar-expand</code> class on the navbar. For navbars that always collapse, don’t add any <code>.navbar-expand</code> class.</p>
 
-      <p>To deep dive on Supported Content, check full documentation for <a href="https://getbootstrap.com/docs/5.0/components/navbar/#toggler">Toggler</a> and <a href="https://getbootstrap.com/docs/5.0/components/navbar/#external-content">External content</a>.</p>
+      <p>To deep dive on Supported Content, check full documentation for <a href="https://getbootstrap.com/docs/5.0/components/navbar/#toggler">Toggler</a> and <a href="https://getbootstrap.com/docs/5.0/components/navbar/#external-content">External
+          content</a>.</p>
     </section>
 
   </main>
 
   <footer>
+    <p class="full-doc">Full documentation on <a href="https://getbootstrap.com/docs/5.0/components/navbar/">Bootstrap site</a></p>
+    <p class="rights">All right reserved to Bootstrap team. Made by <a href="https://github.com/markoscapin">Marco Scapin</a></p>
 
   </footer>
 
